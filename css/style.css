@@ -1,0 +1,299 @@
+/* Estilos del header */
+.logo {
+    width: 5%;
+    padding-left: 1%;
+    filter:drop-shadow(2px 2px 4px rgb(255, 255, 255));
+   }
+   header{
+    padding-top: 1%;
+    padding-bottom: 10%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-family: 'Woodland', sans-serif;
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0.10)
+        ),url("../imagenes/Paleta.png");
+    background-size:cover;
+    background-position: center;
+    text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}
+header ul{
+    list-style: none;
+    font-size:250%;
+    white-space: nowrap;
+}
+header ul li{
+    display: inline-block;
+    padding:0% 7%;
+    border-right: solid;
+}
+.lista--ultimoElemento{
+    border-right: none;
+}
+header ul li:hover{
+    font-size: 102%;
+    text-shadow: 7px 7px 5px rgb(255, 255, 255);
+}
+h1{
+    font-size: 1000%;
+}
+.obra__logo:hover{
+    text-shadow: 5px 5px 4px rgb(255, 255, 255);
+    filter:drop-shadow(5px 5px 4px rgb(255, 255, 255));
+}
+/* Estilos del footer */
+footer{
+    padding-top: 5%;
+    background: linear-gradient(0deg,
+        rgba(9, 1, 80, 0.5),
+        rgba(9, 1, 80, 0.5),
+        rgba(9, 1, 80, 0.35),
+        rgba(9, 1, 80, 0.0),
+        rgba(9, 1, 80, 0)
+        );
+    background-size:cover;
+    background-position: center;
+    
+    align-items: center;
+}
+footer p{
+    padding-left: 5%;
+    padding-bottom: 1%;
+}
+footer span{
+    padding-right: 2%;
+    justify-items: right;
+}
+footer span a{
+    padding: 4px;
+}
+/* Estilos links */
+a{
+    text-decoration: none;
+    color: rgba(0, 0, 0,0.85);
+}
+/* Estilos generales de articulos */
+article {
+    font-family: 'Hubballi', cursive;
+    font-size:150%;
+    width: 100%;
+    margin:auto;
+    text-align: center;
+}
+article h3{
+    padding: 150px;
+    font-family: 'Woodland', cursive;
+    font-size:350%;
+    text-shadow: 1px 1px 2px white;
+    display: inline;
+    background-image: url(../imagenes/Pincelada-Naranja.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+article h2{
+    font-family: 'Woodland', cursive;
+    font-size:550%;
+}
+article h4{
+    font-family: 'Woodland', cursive;
+    font-size:150%;
+    text-shadow: 2px 2px 5px rgb(117, 117, 117);
+}
+/* Estilos index (presentacion) */
+.obra__index{
+    padding-top:25%;
+    padding-bottom: 30%;
+    width: 100%;
+    margin:auto;
+}
+.obra__cuadro{
+    width: 65%;
+    padding: 10%;
+    margin: auto;
+    display: block;
+}
+.obra__curlyBracket{
+    width: 35%;
+    padding-bottom: 20px;
+    margin: auto;
+    display: block;
+}
+.obra__descripcion{
+    padding: 2% 25%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+#obra-desayuno{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Desayuno-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+#obra-festejo{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Festejo-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+#obra-molino{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Molino-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+.obra__index h3{
+    background-image: none;
+}
+/* Estilos sobreMi.html */
+#articulo__sobreMi{
+    padding-bottom: 30%;
+    background-image: url(../imagenes/pinceles.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+}
+#articulo__sobreMi h2{
+    padding-top: 10%;
+    padding-bottom: 15%;
+    margin:auto;
+    display: block;
+    background-image:url("../imagenes/pintura2.png");
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#articulo__sobreMi div div img{
+    margin-left: 18%;
+    float:left;
+}
+#articulo__sobreMi div div aside{
+    display: inline-block;
+    width: 30%;
+    font-size: 150%;
+}
+/* Estilos arte.html */
+
+/* Trabajos en proceso */
+.imagen__proceso img{
+    width: 20%;
+    padding: 3%;
+}
+.imagen__proceso div{
+    font-size: 50%;
+    width: 50%;
+    margin: auto;
+}
+#articulo__procesos{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-top:groove 4px;
+}
+#articulo__procesos article{    
+    padding-top: 50px;
+}
+/* Redes sociales */
+#articulo__redes{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-bottom: groove 4px;
+}
+#articulo__redes article{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+#articulo__redes article article{
+    display: inline-block;
+    width: 20%;
+}
+#articulo__redes article article h4{
+    text-align: center;
+    font-size: 100%;
+}
+/* Estilos galeria.html */
+#articulo__galeria{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+}
+#articulo__galeria article{
+    display: inline-block;
+    width: max-content;
+}
+#articulo__galeria p{
+    padding: 50px;
+}
+#articulo__galeria p a{
+    text-decoration:underline;
+}
+/* Estilos contacto.html */
+#articulo__contacto{
+    text-align: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    margin: auto;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+
+}
+#articulo__contacto aside{
+    padding: 10% 5%;
+    width: 25%;
+    margin: 4%;
+    display: inline-block;
+    background-color:rgba(127, 255, 212,0.25);
+    border: solid 4px;
+    border-style:inset;
+}
+#articulo__contacto div{
+    display: inline-block;
+    margin-left: 2%;
+}
+label{
+    display: block;
+}
+#articulo__contacto div h5{
+    font-size: 105%;
+}
+.boton{
+    display: block;
+    background-color:rgba(127, 255, 212,0.25);
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 130%;
+    font-family: 'Hubballi', cursive;
+}

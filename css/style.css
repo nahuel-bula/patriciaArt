@@ -1,15 +1,25 @@
+/*Grid base*/
+
+.globalGrid{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "body"
+    "footer"
+    ;
+}
 /* Estilos del header */
 .logo {
-    width: 5%;
-    padding-left: 1%;
-    filter:drop-shadow(2px 2px 4px rgb(255, 255, 255));
+    width: 0px;
    }
-   header{
+header{
+    width: 90%;
+    grid-area: header;
     padding-top: 1%;
-    padding-bottom: 10%;
-    margin: auto;
-    display: block;
-    text-align: center;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;
     font-family: 'Woodland', sans-serif;
     background: linear-gradient(0deg,
         rgba(255,255,255,1),
@@ -22,15 +32,24 @@
     background-position: center;
     text-shadow: 3px 3px 4px rgb(255, 255, 255);
 }
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 header ul{
+    justify-content: center;
+    width: 60%;
+    display: inline;
     list-style: none;
-    font-size:250%;
+    font-size: 120%;
     white-space: nowrap;
+    flex-shrink: 0.3;
 }
 header ul li{
-    display: inline-block;
-    padding:0% 7%;
-    border-right: solid;
+    display: inline;
+    padding:0% 3%;
+    border-right: solid 1px;
 }
 .lista--ultimoElemento{
     border-right: none;
@@ -40,14 +59,20 @@ header ul li:hover{
     text-shadow: 7px 7px 5px rgb(255, 255, 255);
 }
 h1{
-    font-size: 1000%;
+    font-size: 300%;
+    display: inline;
 }
 .obra__logo:hover{
     text-shadow: 5px 5px 4px rgb(255, 255, 255);
     filter:drop-shadow(5px 5px 4px rgb(255, 255, 255));
 }
+/* Cuerpo de la pagina*/
+.body{
+    grid-area: body;
+}
 /* Estilos del footer */
 footer{
+    grid-area: footer;
     padding-top: 5%;
     background: linear-gradient(0deg,
         rgba(9, 1, 80, 0.5),
@@ -58,7 +83,6 @@ footer{
         );
     background-size:cover;
     background-position: center;
-    
     align-items: center;
 }
 footer p{
@@ -86,15 +110,16 @@ article {
     text-align: center;
 }
 article h3{
-    padding: 150px;
+    padding: 50px;
     font-family: 'Woodland', cursive;
-    font-size:350%;
+    font-size:180%;
     text-shadow: 1px 1px 2px white;
     display: inline;
     background-image: url(../imagenes/Pincelada-Naranja.png);
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
+    white-space: nowrap;
 }
 article h2{
     font-family: 'Woodland', cursive;
@@ -102,7 +127,7 @@ article h2{
 }
 article h4{
     font-family: 'Woodland', cursive;
-    font-size:150%;
+    font-size:90%;
     text-shadow: 2px 2px 5px rgb(117, 117, 117);
 }
 /* Estilos index (presentacion) */
@@ -113,22 +138,22 @@ article h4{
     margin:auto;
 }
 .obra__cuadro{
-    width: 65%;
+    width: 80%;
     padding: 10%;
     margin: auto;
-    display: block;
 }
 .obra__curlyBracket{
     width: 35%;
     padding-bottom: 20px;
     margin: auto;
-    display: block;
 }
 .obra__descripcion{
     padding: 2% 25%;
-    margin: auto;
-    display: block;
     text-align: center;
+}
+.obra__descripcion p{
+    font-size: 80%;
+    padding-top: 3%;
 }
 #obra-desayuno{
     background: linear-gradient(0deg,
@@ -203,20 +228,37 @@ article h4{
     font-size: 150%;
 }
 /* Estilos arte.html */
+.articulo__arte{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#arte__body{
+    display: grid;
+    grid-template-rows:
+    "div_procesos"
+    "div_redes"
+    ;
+}
 
 /* Trabajos en proceso */
-.imagen__proceso img{
-    width: 20%;
-    padding: 3%;
+.coleccion__arte{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
 }
-.imagen__proceso div{
+.coleccion__arte img{
+    width: 60%;
+    padding: 6% 3%;
+}
+.arte__descripcion{
     font-size: 50%;
     width: 50%;
     margin: auto;
 }
 #articulo__procesos{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    grid-area: div_procesos;
     border-top:groove 4px;
 }
 #articulo__procesos article{    
@@ -224,23 +266,18 @@ article h4{
 }
 /* Redes sociales */
 #articulo__redes{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    grid-area: div_redes;
     border-bottom: groove 4px;
 }
-#articulo__redes article{
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-    text-align: left;
-}
-#articulo__redes article article{
-    display: inline-block;
-    width: 20%;
-}
-#articulo__redes article article h4{
+
+.coleccion__arte article h4{
     text-align: center;
     font-size: 100%;
+}
+.coleccion__arte article{
+    padding: 3%;
+    margin:auto;
+    width: fit-content;
 }
 /* Estilos galeria.html */
 #articulo__galeria{
@@ -297,3 +334,153 @@ label{
     font-size: 130%;
     font-family: 'Hubballi', cursive;
 }
+
+/* Media queries */
+
+/* Formato tablet */
+@media screen and (min-width: 768px){
+    h1{
+        font-size: 500%;
+    }
+    header ul{
+        display: flex;
+        list-style: none;
+        font-size:200%;
+        white-space: nowrap;
+    }
+    .articulo__arte article h4{
+        font-size: 170%;
+    }
+    .articulo__arte h3{
+        font-size: 230%;
+    }
+    .obra__descripcion h3{
+        font-size: 205%;
+    }
+    .obra__descripcion p{
+        font-size: 100%;
+    }
+
+    /* Estilos arte.html */
+.coleccion__arte img{
+    width: 25%;
+}
+.arte__descripcion{
+    font-size: 80%;
+}
+/* Redes sociales */
+
+.coleccion__arte article h4{
+    text-align: center;
+    font-size: 100%;
+}
+.coleccion__arte article{
+    margin:auto;
+    width: 30%;
+}
+}
+
+
+/* Formato escritorio */
+@media screen and (min-width: 1024px){
+    h1{
+        font-size: 900%;
+        margin-bottom: 10%;
+    }
+    .logo {
+        width: 75px;
+        padding-left: 1%;
+        filter:drop-shadow(2px 2px 4px rgb(255, 255, 255));
+       }
+    header{
+        grid-area: header;
+        padding-top: 1%;
+        text-align: center;
+        font-family: 'Woodland', sans-serif;
+        background: linear-gradient(0deg,
+            rgba(255,255,255,1),
+            rgba(255,255,255,0.75),
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.3),
+            rgba(255,255,255,0.10)
+            ),url("../imagenes/Paleta.png");
+        background-size:cover;
+        background-position: center;
+        text-shadow: 3px 3px 4px rgb(255, 255, 255);
+    }
+    header nav{
+        display: block;
+        text-align: center;
+    }
+    header ul{
+        margin: auto;
+        list-style: none;
+        font-size:250%;
+        white-space: nowrap;
+    }
+    header ul li{
+        display: inline-block;
+        padding:0% 7%;
+        border-right: solid;
+    }
+    .lista--ultimoElemento{
+        border-right: none;
+    }
+    .obra__logo:hover{
+        text-shadow: 5px 5px 4px rgb(255, 255, 255);
+        filter:drop-shadow(5px 5px 4px rgb(255, 255, 255));
+    }
+    /* Estilos generales de articulos */
+article {
+    font-family: 'Hubballi', cursive;
+    font-size:150%;
+    width: 100%;
+    margin:auto;
+    text-align: center;
+}
+
+article h2{
+    font-family: 'Woodland', cursive;
+    font-size:550%;
+}
+article h4{
+    font-family: 'Woodland', cursive;
+    font-size:150%;
+    text-shadow: 2px 2px 5px rgb(117, 117, 117);
+}
+/* Estilos index (presentacion) */
+.obra__index{
+    padding-top:25%;
+    padding-bottom: 30%;
+    width: 100%;
+    margin:auto;
+}
+.obra__cuadro{
+    width: 65%;
+    padding: 10%;
+    margin: auto;
+    display: block;
+}
+.obra__descripcion{
+    padding: 2% 25%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+/* Estilos arte.html */
+
+/* Trabajos en proceso */
+#articulo__procesos{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-top:groove 4px;
+}
+#articulo__procesos article{    
+    padding-top: 50px;
+}
+}
+
+
+
+
+

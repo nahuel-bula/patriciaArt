@@ -139,8 +139,13 @@ article h4{
 }
 .obra__cuadro{
     width: 80%;
-    padding: 10%;
+    padding: 0%;
     margin: auto;
+    transition: width 5s, margin 5s, padding 5s;
+}
+.obra__cuadro:active{
+    width: 100%;
+    padding: 0%;
 }
 .obra__curlyBracket{
     width: 35%;
@@ -206,6 +211,9 @@ article h4{
     background-position: bottom left;
     border-top:groove 4px;
     border-bottom: groove 4px;
+    animation: pinceles 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 #articulo__sobreMi h2{
     padding-top: 10%;
@@ -216,6 +224,9 @@ article h4{
     background-size: 35%;
     background-repeat: no-repeat;
     background-position: top right;
+    animation: pinturas 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #articulo__sobreMi div div img{
@@ -287,7 +298,6 @@ article h4{
     border-bottom: groove 4px;
 }
 #articulo__galeria article{
-    display: inline-block;
     width: max-content;
 }
 #articulo__galeria p{
@@ -296,6 +306,13 @@ article h4{
 #articulo__galeria p a{
     text-decoration:underline;
 }
+#articulo__galeria div{
+    display: flex;
+    align-items:flex-start;
+    width: 70%;
+    margin: auto;
+}
+
 /* Estilos contacto.html */
 #articulo__contacto{
     text-align: left;
@@ -333,6 +350,12 @@ label{
     margin-top: 20px;
     font-size: 130%;
     font-family: 'Hubballi', cursive;
+    transition: padding 2s;
+    transition-timing-function: ease-out;
+}
+
+.boton:hover{
+    padding: 25px;
 }
 
 /* Media queries */
@@ -478,6 +501,24 @@ article h4{
 #articulo__procesos article{    
     padding-top: 50px;
 }
+/* Animaciones*/
+#articulo__galeria article img{
+    width: 100%;
+    transition: width 2s;
+    transition-timing-function: ease;
+}
+#articulo__galeria article img:hover{
+    width: 110%;
+}
+}
+
+@keyframes pinturas {
+    from{background-size: 35%;}
+    to{background-size: 37%;}
+}
+@keyframes pinceles {
+    from{background-size: 25%;}
+    to{background-size: 30%;}
 }
 
 

@@ -1,0 +1,25 @@
+footer{
+    grid-area: footer;
+    padding-top: 5%;
+    background: linear-gradient(0deg,
+        rgba(9, 1, 80, 0.5),
+        rgba(9, 1, 80, 0.5),
+        rgba(9, 1, 80, 0.35),
+        rgba(9, 1, 80, 0.0),
+        rgba(9, 1, 80, 0)
+        );
+    background-size:cover;
+    background-position: center;
+    align-items: center;
+    p{
+        padding-left: 5%;
+        padding-bottom: 1%;
+    }
+    span{
+        padding-right: 2%;
+        justify-items: right;
+        a{
+            padding: 4px;
+        }
+    }
+}

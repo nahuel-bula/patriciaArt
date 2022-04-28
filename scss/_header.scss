@@ -1,0 +1,60 @@
+/* Estilos del header */
+.logo {
+    width: 0px;
+   }
+header{
+    width: 90%;
+    grid-area: header;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;
+    font-family: 'Woodland', sans-serif;
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0.10)
+        ),url("../imagenes/Paleta.png");
+    background-size:cover;
+    background-position: center;
+    text-shadow: 3px 3px 4px rgb(255, 255, 255);
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    ul{
+        justify-content: center;
+        width: 60%;
+        display: inline;
+        list-style: none;
+        font-size: 120%;
+        white-space: nowrap;
+        flex-shrink: 0.3;
+        li{
+            display: inline;
+            padding:0% 3%;
+            border-right: solid 1px;
+            &:hover{
+                font-size: 102%;
+                text-shadow: 7px 7px 5px rgb(255, 255, 255);
+            }
+        }
+    }
+} 
+.lista--ultimoElemento{
+    border-right: none;
+}
+h1{
+    font-size: 300%;
+    display: inline;
+}
+.obra__logo{
+    &:hover{
+        text-shadow: 5px 5px 4px rgb(255, 255, 255);
+        filter:drop-shadow(5px 5px 4px rgb(255, 255, 255));
+    }
+}

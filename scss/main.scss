@@ -1,0 +1,277 @@
+@import "header.scss";
+@import "footer.scss";
+
+$articleFontSize: 150%;
+$articleH3FontSize: 180%;
+$articleH3Padding: 50px;
+$articleH2FontSize:550%;
+$articleH4FontSize:90%;
+$obraIndexPaddingTop:25%;
+$obraIndexPaddingBottom:30%;
+$obraCurlyBracketWidth:35%;
+
+/* Estilos links */
+a{
+    text-decoration: none;
+    color: rgba(0, 0, 0,0.85);
+    &hover{
+        color: rgba(0, 0, 0,0.85);
+     }
+}
+/* Estilos generales de articulos */
+article {
+    font-family: 'Hubballi', cursive;
+    font-size:$articleFontSize;
+    width: 100%;
+    margin:auto;
+    text-align: center;
+    h3{
+        padding: $articleH3Padding;
+        font-family: 'Woodland', cursive;
+        font-size:$articleH3FontSize;
+        text-shadow: 1px 1px 2px white;
+        display: inline;
+        background-image: url(../imagenes/Pincelada-Naranja.png);
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        white-space: nowrap;
+    }
+    h2{
+        font-family: 'Woodland', cursive;
+        font-size:$articleH2FontSize;
+    }
+    h4{
+        font-family: 'Woodland', cursive;
+        font-size:$articleH4FontSize;
+        text-shadow: 2px 2px 5px rgb(117, 117, 117);
+    }
+}
+/* Estilos index (presentacion) */
+.obra__index{
+    padding-top:$obraIndexPaddingTop;
+    padding-bottom:$obraIndexPaddingBottom;
+    width: 100%;
+    margin:auto;
+    h3{
+        background-image: none;
+    }
+}
+.obra__cuadro{
+    padding: 0%;
+    margin: auto;
+    transition: width 5s, margin 5s, padding 5s;
+    &active{
+        width: 100%;
+        padding: 0%;
+    }
+}
+.obra__curlyBracket{
+    width: $obraCurlyBracketWidth;
+    padding-bottom: 20px;
+    margin: auto;
+}
+.obra__descripcion{
+    padding: 2% 25%;
+    text-align: center;
+    p{
+        font-size: 80%;
+        padding-top: 3%;
+    }
+}
+#obra-desayuno{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Desayuno-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+#obra-festejo{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Festejo-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+#obra-molino{
+    background: linear-gradient(0deg,
+        rgba(255,255,255,1),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.50),
+        rgba(255,255,255,0.75),
+        rgba(255,255,255,1)
+        ),url("../imagenes/Molino-sin-bordes.jpeg");
+    background-size:cover;
+    background-position: center;
+}
+/* Estilos sobreMi.html */
+#articulo__sobreMi{
+    padding-bottom: 30%;
+    background-image: url(../imagenes/pinceles.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+    animation: pinceles 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    h2{
+        padding-top: 10%;
+        padding-bottom: 15%;
+        margin:auto;
+        display: block;
+        background-image:url("../imagenes/pintura2.png");
+        background-size: 35%;
+        background-repeat: no-repeat;
+        background-position: top right;
+        animation: pinturas 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    div{
+        div{
+            img{
+                margin-left: 18%;
+                float:left;
+            }
+            aside{
+                display: inline-block;
+                width: 30%;
+                font-size: 150%;
+            }
+        }
+    }
+
+}
+/* Estilos arte.html */
+.articulo__arte{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#arte__body{
+    display: grid;
+    grid-template-rows:
+    "div_procesos"
+    "div_redes"
+    ;
+}
+
+/* Trabajos en proceso */
+.coleccion__arte{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    img{
+        width: 60%;
+        padding: 6% 3%;
+    }
+    article {
+        padding: 3%;
+        margin:auto;
+        width: fit-content;
+        h4{
+        text-align: center;
+        font-size: 100%;
+        }
+    }
+}
+.arte__descripcion{
+    font-size: 50%;
+    width: 50%;
+    margin: auto;
+}
+#articulo__procesos{
+    grid-area: div_procesos;
+    border-top:groove 4px;
+    article{    
+        padding-top: 50px;
+    }
+}
+/* Redes sociales */
+#articulo__redes{
+    grid-area: div_redes;
+    border-bottom: groove 4px;
+}
+
+/* Estilos galeria.html */
+#articulo__galeria{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+    article{
+        width: max-content;
+    }
+    p{
+        padding: 50px;
+        a{
+            text-decoration:underline;
+        }
+    }
+    div{
+        display: flex;
+        align-items:flex-start;
+        width: 70%;
+        margin: auto;
+    }
+}
+/* Estilos contacto.html */
+#articulo__contacto{
+    text-align: left;
+    padding-top: 5%;
+    padding-bottom: 15%;
+    width: 100%;
+    margin: auto;
+    border-top:groove 4px;
+    border-bottom: groove 4px;
+    aside{
+        padding: 10% 5%;
+        margin: 4%;
+        display: inline-block;
+        background-color:rgba(127, 255, 212,0.25);
+        border: solid 4px;
+        border-style:inset;
+    }
+    div{
+        padding-top: 5%;
+        display: inline-block;
+        margin-left: 2%;
+        h5{
+            font-size: 105%;
+        }
+    }
+
+}
+label{
+    display: block;
+}
+.boton{
+    display: block;
+    background-color:rgba(127, 255, 212,0.25);
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 130%;
+    font-family: 'Hubballi', cursive;
+    transition: padding 2s;
+    transition-timing-function: ease-out;
+    &hover{
+        padding: 25px;
+    }
+}

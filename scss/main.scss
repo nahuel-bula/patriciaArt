@@ -1,20 +1,48 @@
 @import "header.scss";
 @import "footer.scss";
+@import "keyframes.scss";
+
 
 $articleFontSize: 150%;
 $articleH3FontSize: 180%;
 $articleH3Padding: 50px;
 $articleH2FontSize:550%;
-$articleH4FontSize:90%;
+$articleH4FontSizeMobile:90%;
 $obraIndexPaddingTop:25%;
 $obraIndexPaddingBottom:30%;
 $obraCurlyBracketWidth:35%;
+$articleH4FontSizeDesktop: 150%;
+
+$obras:(
+    desayuno:"../imagenes/Desayuno-sin-bordes.jpeg",
+    festejo: "../imagenes/Festejo-sin-bordes.jpeg",
+    molino: "../imagenes/Molino-sin-bordes.jpeg"
+);
+
+@mixin obraStyle($urlImagen) {
+    background: (linear-gradient(0deg,
+            rgba(255,255,255,1),
+            rgba(255,255,255,0.75),
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.75),
+            rgba(255,255,255,1)),url($urlImagen));
+    background-size:cover;
+    background-position: center;
+}
+
+@each $obra, $url in $obras {
+    #obra-#{$obra}{
+        @include obraStyle($url);
+    }
+}
 
 /* Estilos links */
 a{
     text-decoration: none;
     color: rgba(0, 0, 0,0.85);
-    &hover{
+    &:hover{
         color: rgba(0, 0, 0,0.85);
      }
 }
@@ -43,8 +71,11 @@ article {
     }
     h4{
         font-family: 'Woodland', cursive;
-        font-size:$articleH4FontSize;
+        font-size:$articleH4FontSizeMobile;
         text-shadow: 2px 2px 5px rgb(117, 117, 117);
+        @include desktopView{
+            font-size: $articleH4FontSizeDesktop;
+        }
     }
 }
 /* Estilos index (presentacion) */
@@ -60,10 +91,14 @@ article {
 .obra__cuadro{
     padding: 0%;
     margin: auto;
+    padding-bottom: 7%;
     transition: width 5s, margin 5s, padding 5s;
-    &active{
+    &:active{
         width: 100%;
         padding: 0%;
+    }
+    @include desktopView{
+        padding: 10%;
     }
 }
 .obra__curlyBracket{
@@ -77,46 +112,26 @@ article {
     p{
         font-size: 80%;
         padding-top: 3%;
+        @include tabletView{
+            font-size: 100%;
+        }
+        @include desktopView{
+            font-size: 100%;
+        }
     }
-}
-#obra-desayuno{
-    background: linear-gradient(0deg,
-        rgba(255,255,255,1),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,1)
-        ),url("../imagenes/Desayuno-sin-bordes.jpeg");
-    background-size:cover;
-    background-position: center;
-}
-#obra-festejo{
-    background: linear-gradient(0deg,
-        rgba(255,255,255,1),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,1)
-        ),url("../imagenes/Festejo-sin-bordes.jpeg");
-    background-size:cover;
-    background-position: center;
-}
-#obra-molino{
-    background: linear-gradient(0deg,
-        rgba(255,255,255,1),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.50),
-        rgba(255,255,255,0.75),
-        rgba(255,255,255,1)
-        ),url("../imagenes/Molino-sin-bordes.jpeg");
-    background-size:cover;
-    background-position: center;
+    h3{
+        @include tabletView{
+            font-size: 205%;
+        }
+        @include desktopView{
+            font-size: 205%;
+        }
+    }
+    @include desktopView{
+        margin: auto;
+        display: block;
+        text-align: center;
+    }
 }
 /* Estilos sobreMi.html */
 #articulo__sobreMi{
@@ -145,14 +160,47 @@ article {
     }
     div{
         div{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
             img{
-                margin-left: 18%;
-                float:left;
+                width: 370px;
+                margin-right: 5px;
+                padding-bottom: 40px;
+                @include tabletView{
+                    width: 300px;
+                    padding-bottom: 0%;
+                }
+                @include desktopView{
+                    width: 400px;
+                    padding-bottom: 0%;
+                }
             }
             aside{
-                display: inline-block;
-                width: 30%;
-                font-size: 150%;
+                width: 420px;
+                font-size: 100%;
+                @include tabletView{
+                    width: 300px;
+                    font-size: 110%;
+                }
+                @include desktopView{
+                    width: 400px;
+                    font-size: 150%; 
+                }
+            }
+            p{
+                width: 420px;
+                font-size: 100%;
+                @include tabletView{
+                    width: 600px;
+                    font-size: 110%;
+                }
+                @include desktopView{
+                    width: 850px;
+                    font-size: 150%;
+                }
             }
         }
     }
@@ -162,6 +210,18 @@ article {
 .articulo__arte{
     padding-top: 100px;
     padding-bottom: 100px;
+    article{
+        h4{
+            @include tabletView{
+                font-size: 170%;
+            }
+        }
+    }
+    h3{
+        @include tabletView{
+            font-size: 230%;
+        }
+    }
 }
 #arte__body{
     display: grid;
@@ -181,14 +241,25 @@ article {
     img{
         width: 60%;
         padding: 6% 3%;
+        @include tabletView{
+            width: 25%;
+        }
     }
     article {
         padding: 3%;
         margin:auto;
         width: fit-content;
         h4{
-        text-align: center;
-        font-size: 100%;
+            text-align: center;
+            font-size: 100%;
+            @include tabletView{
+                text-align: center;
+                font-size: 100%;
+            }
+        }
+        @include tabletView{
+            margin:auto;
+            width: 50%;
         }
     }
 }
@@ -196,6 +267,9 @@ article {
     font-size: 50%;
     width: 50%;
     margin: auto;
+    @include tabletView{
+        font-size: 80%;
+    }
 }
 #articulo__procesos{
     grid-area: div_procesos;
@@ -203,8 +277,13 @@ article {
     article{    
         padding-top: 50px;
     }
+    @include desktopView{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 }
 /* Redes sociales */
+
 #articulo__redes{
     grid-area: div_redes;
     border-bottom: groove 4px;
@@ -218,6 +297,18 @@ article {
     border-bottom: groove 4px;
     article{
         width: max-content;
+        img{
+            &:hover{
+                @include desktopView{
+                    width: 110%;
+                }    
+            }
+            @include desktopView{
+                width: 100%;
+                transition: width 2s;
+                transition-timing-function: ease;
+            }
+        }
     }
     p{
         padding: 50px;
@@ -230,6 +321,7 @@ article {
         align-items:flex-start;
         width: 70%;
         margin: auto;
+        flex-wrap: wrap;
     }
 }
 /* Estilos contacto.html */
@@ -241,20 +333,32 @@ article {
     margin: auto;
     border-top:groove 4px;
     border-bottom: groove 4px;
+    display: flex;
+    justify-content: space-around;
     aside{
-        padding: 10% 5%;
-        margin: 4%;
-        display: inline-block;
+        padding: 2% 5%;
+        margin: auto;
+        margin-top: 70px;
+        width: 90%;
         background-color:rgba(127, 255, 212,0.25);
         border: solid 4px;
         border-style:inset;
+        order: 2;
+        @include desktopView{
+            width: auto;
+            margin: 1%;
+            order: 0;
+            padding: 10% 5%;
+        }
     }
     div{
+        width: 90%;
         padding-top: 5%;
-        display: inline-block;
-        margin-left: 2%;
         h5{
             font-size: 105%;
+        }
+        @include desktopView{
+            width: auto;
         }
     }
 
@@ -271,7 +375,7 @@ label{
     font-family: 'Hubballi', cursive;
     transition: padding 2s;
     transition-timing-function: ease-out;
-    &hover{
+    &:hover{
         padding: 25px;
     }
 }

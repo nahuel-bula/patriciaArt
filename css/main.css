@@ -1,13 +1,16 @@
 h1 {
   display: inline;
-  font-size: 300%; }
+  font-size: 390%; }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     h1 {
-      font-size: 500%; } }
+      font-size: 550%; } }
   @media screen and (min-width: 1024px) {
     h1 {
       font-size: 900%;
       margin-bottom: 10%; } }
+  @media screen and (max-width: 525px) {
+    h1 {
+      font-size: 250%; } }
 
 /* Estilos del header */
 .logo {
@@ -19,10 +22,9 @@ h1 {
       filter: drop-shadow(2px 2px 4px white); } }
 
 header {
-  width: 90%;
   grid-area: header;
   padding-top: 1%;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   padding-left: 5%;
   padding-right: 5%;
   text-align: left;
@@ -33,8 +35,9 @@ header {
   text-shadow: 3px 3px 4px white; }
   header nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between; }
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: center; }
     @media screen and (min-width: 1024px) {
       header nav {
         display: block;
@@ -44,17 +47,21 @@ header {
     width: 70%;
     display: flex;
     list-style: none;
-    font-size: 130%;
+    font-size: 180%;
     white-space: nowrap;
     flex-shrink: 0.3;
     margin: auto; }
+    @media screen and (max-width: 525px) {
+      header ul {
+        font-size: 130%; } }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       header ul {
-        font-size: 200%; } }
+        font-size: 250%; } }
     @media screen and (min-width: 1024px) {
       header ul {
         margin: auto;
         list-style: none;
+        padding-top: 3%;
         font-size: 250%; } }
     header ul li {
       display: inline;
@@ -78,6 +85,10 @@ header {
       background-size: cover;
       background-position: center;
       text-shadow: 3px 3px 4px white; } }
+  @media screen and (max-width: 525px) {
+    header {
+      padding-top: 2%;
+      padding-bottom: 2%; } }
 
 .lista--ultimoElemento {
   border-right: none; }
@@ -115,17 +126,37 @@ footer {
     background-size: 30%; } }
 
 #obra-desayuno {
-  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Desayuno-sin-bordes.jpeg");
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Desayuno.jpeg");
   background-size: cover;
   background-position: center; }
 
 #obra-festejo {
-  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Festejo-sin-bordes.jpeg");
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Festejo.jpeg");
   background-size: cover;
   background-position: center; }
 
 #obra-molino {
-  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Molino-sin-bordes.jpeg");
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Molino.jpeg");
+  background-size: cover;
+  background-position: center; }
+
+#obra-ironman {
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/IronMan.jpeg");
+  background-size: cover;
+  background-position: center; }
+
+#obra-paisaje {
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Paisaje.jpeg");
+  background-size: cover;
+  background-position: center; }
+
+#obra-jessicajones {
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/JessicaJones.jpeg");
+  background-size: cover;
+  background-position: center; }
+
+#obra-festejo-2 {
+  background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.75), white), url("../imagenes/Festejo-2.jpeg");
   background-size: cover;
   background-position: center; }
 
@@ -144,9 +175,9 @@ article {
   margin: auto;
   text-align: center; }
   article h3 {
-    padding: 50px;
+    padding: 60px;
     font-family: 'Woodland', cursive;
-    font-size: 180%;
+    font-size: 50px;
     text-shadow: 1px 1px 2px white;
     display: inline;
     background-image: url(../imagenes/Pincelada-Naranja.png);
@@ -154,9 +185,23 @@ article {
     background-repeat: no-repeat;
     background-position: center;
     white-space: nowrap; }
+    @media screen and (max-width: 525px) {
+      article h3 {
+        font-size: 40px; } }
   article h2 {
     font-family: 'Woodland', cursive;
-    font-size: 550%; }
+    font-size: 450%;
+    padding-top: 10%;
+    padding-bottom: 8%; }
+    @media screen and (max-width: 525px) {
+      article h2 {
+        font-size: 350%; } }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      article h2 {
+        font-size: 550%; } }
+    @media screen and (min-width: 1024px) {
+      article h2 {
+        font-size: 550%; } }
   article h4 {
     font-family: 'Woodland', cursive;
     font-size: 90%;
@@ -167,24 +212,47 @@ article {
 
 /* Estilos index (presentacion) */
 .obra__index {
-  padding-top: 25%;
+  padding-top: 45%;
   padding-bottom: 30%;
   width: 100%;
   margin: auto; }
   .obra__index h3 {
     background-image: none; }
+  @media screen and (min-width: 1024px) {
+    .obra__index {
+      padding-top: 25%; } }
 
-.obra__cuadro {
-  padding: 0%;
+.obra__cuadro__div {
   margin: auto;
+  padding: 10%;
   padding-bottom: 7%;
   transition: width 5s, margin 5s, padding 5s; }
-  .obra__cuadro:active {
-    width: 100%;
-    padding: 0%; }
+  @media screen and (min-width: 1024px) {
+    .obra__cuadro__div {
+      padding: 20%;
+      padding-bottom: 7%; } }
+  .obra__cuadro__div:active {
+    margin: auto;
+    padding: 0%;
+    width: 100%; }
+
+.obra__cuadro {
+  transition: width 5s, margin 5s, padding 5s;
+  background: white;
+  padding: 2px; }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .obra__cuadro {
+      padding: 4px; } }
   @media screen and (min-width: 1024px) {
     .obra__cuadro {
-      padding: 10%; } }
+      padding: 7px; } }
+  .obra__cuadro:active {
+    width: 100%;
+    margin: 0%; }
+    .obra__cuadro:active .obra__cuadro__div {
+      margin: auto;
+      padding: 0%;
+      width: 100%; }
 
 .obra__curlyBracket {
   width: 35%;
@@ -192,11 +260,11 @@ article {
   margin: auto; }
 
 .obra__descripcion {
-  padding: 2% 25%;
+  padding: 2% 15%;
   text-align: center; }
   .obra__descripcion p {
     font-size: 80%;
-    padding-top: 3%; }
+    padding-top: 5%; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .obra__descripcion p {
         font-size: 100%; } }
@@ -218,7 +286,7 @@ article {
 /* Estilos sobreMi.html */
 #articulo__sobreMi {
   padding-bottom: 30%;
-  background-image: url(../imagenes/pinceles.png);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.5)), url(../imagenes/pinceles.png);
   background-size: 25%;
   background-repeat: no-repeat;
   background-position: bottom left;
@@ -228,11 +296,9 @@ article {
   animation-iteration-count: infinite;
   animation-direction: alternate; }
   #articulo__sobreMi h2 {
-    padding-top: 10%;
-    padding-bottom: 15%;
     margin: auto;
     display: block;
-    background-image: url("../imagenes/pintura2.png");
+    background: linear-gradient(0deg, white, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), url("../imagenes/pintura2.png");
     background-size: 35%;
     background-repeat: no-repeat;
     background-position: top right;
@@ -241,36 +307,24 @@ article {
     animation-direction: alternate; }
   #articulo__sobreMi div div {
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap; }
+    justify-content: center; }
     #articulo__sobreMi div div img {
-      width: 370px;
-      margin-right: 5px;
-      padding-bottom: 40px; }
+      width: 270px;
+      padding: 8% 0%; }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         #articulo__sobreMi div div img {
-          width: 300px;
-          padding-bottom: 0%; } }
+          width: 300px; } }
       @media screen and (min-width: 1024px) {
         #articulo__sobreMi div div img {
-          width: 400px;
-          padding-bottom: 0%; } }
-    #articulo__sobreMi div div aside {
-      width: 420px;
-      font-size: 100%; }
-      @media screen and (min-width: 768px) and (max-width: 1024px) {
-        #articulo__sobreMi div div aside {
-          width: 300px;
-          font-size: 110%; } }
-      @media screen and (min-width: 1024px) {
-        #articulo__sobreMi div div aside {
-          width: 400px;
-          font-size: 150%; } }
+          width: 400px; } }
+      @media screen and (max-width: 525px) {
+        #articulo__sobreMi div div img {
+          width: 240px; } }
     #articulo__sobreMi div div p {
+      margin: auto;
       width: 420px;
-      font-size: 100%; }
+      font-size: 100%;
+      margin-bottom: 15%; }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
         #articulo__sobreMi div div p {
           width: 600px;
@@ -278,69 +332,67 @@ article {
       @media screen and (min-width: 1024px) {
         #articulo__sobreMi div div p {
           width: 850px;
-          font-size: 150%; } }
+          font-size: 120%; } }
+      @media screen and (max-width: 525px) {
+        #articulo__sobreMi div div p {
+          width: 300px;
+          font-size: 80%; } }
 
 /* Estilos arte.html */
-.articulo__arte {
-  padding-top: 100px;
-  padding-bottom: 100px; }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .articulo__arte article h4 {
-      font-size: 170%; } }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .articulo__arte h3 {
-      font-size: 230%; } }
-
 #arte__body {
   display: grid;
   grid-template-rows: "div_procesos" "div_redes"; }
 
-/* Trabajos en proceso */
+/* Pintura y trabajos en proceso */
+#articulo__pintura {
+  grid-area: div_procesos;
+  border-top: groove 4px; }
+  #articulo__pintura article {
+    padding-top: 70px; }
+
 .coleccion__arte {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  padding: 5% 0%; }
   .coleccion__arte img {
     width: 60%;
     padding: 6% 3%; }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .coleccion__arte img {
-        width: 25%; } }
+        width: 40%; } }
+    @media screen and (min-width: 1024px) {
+      .coleccion__arte img {
+        width: 35%; } }
   .coleccion__arte article {
     padding: 3%;
     margin: auto;
-    width: fit-content; }
+    width: auto; }
     .coleccion__arte article h4 {
       text-align: center;
       font-size: 100%; }
-      @media screen and (min-width: 768px) and (max-width: 1024px) {
-        .coleccion__arte article h4 {
-          text-align: center;
-          font-size: 100%; } }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .coleccion__arte article {
-        margin: auto;
         width: 50%; } }
+    @media screen and (min-width: 1024px) {
+      .coleccion__arte article {
+        width: 50%; } }
+  @media screen and (min-width: 1024px) {
+    .coleccion__arte {
+      width: 80%; } }
 
 .arte__descripcion {
   font-size: 50%;
-  width: 50%;
+  width: 60%;
   margin: auto; }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     .arte__descripcion {
-      font-size: 80%; } }
-
-#articulo__procesos {
-  grid-area: div_procesos;
-  border-top: groove 4px; }
-  #articulo__procesos article {
-    padding-top: 50px; }
+      font-size: 60%; } }
   @media screen and (min-width: 1024px) {
-    #articulo__procesos {
-      padding-top: 100px;
-      padding-bottom: 100px; } }
+    .arte__descripcion {
+      font-size: 70%; } }
 
 /* Redes sociales */
 #articulo__redes {
@@ -349,35 +401,48 @@ article {
 
 /* Estilos galeria.html */
 #articulo__galeria {
-  padding-top: 100px;
   padding-bottom: 100px;
   border-top: groove 4px;
   border-bottom: groove 4px; }
   #articulo__galeria article {
-    width: max-content; }
-    @media screen and (min-width: 1024px) {
-      #articulo__galeria article img:hover {
-        width: 110%; } }
-    @media screen and (min-width: 1024px) {
-      #articulo__galeria article img {
-        width: 100%;
-        transition: width 2s;
-        transition-timing-function: ease; } }
+    width: auto; }
+    #articulo__galeria article img {
+      width: 80%;
+      padding: 0% 3%; }
+      @media screen and (min-width: 1024px) {
+        #articulo__galeria article img:hover {
+          width: 110%; } }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        #articulo__galeria article img {
+          width: 100%; } }
+      @media screen and (min-width: 1024px) {
+        #articulo__galeria article img {
+          width: 100%;
+          transition: width 2s;
+          transition-timing-function: ease; } }
   #articulo__galeria p {
     padding: 50px; }
+    @media screen and (max-width: 525px) {
+      #articulo__galeria p {
+        font-size: 80%; } }
     #articulo__galeria p a {
       text-decoration: underline; }
   #articulo__galeria div {
     display: flex;
     align-items: flex-start;
-    width: 70%;
     margin: auto;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 100%; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #articulo__galeria div {
+        width: 70%; } }
+    @media screen and (min-width: 1024px) {
+      #articulo__galeria div {
+        width: 70%; } }
 
 /* Estilos contacto.html */
 #articulo__contacto {
   text-align: left;
-  padding-top: 5%;
   padding-bottom: 15%;
   width: 100%;
   margin: auto;
@@ -402,12 +467,26 @@ article {
         padding: 10% 5%; } }
   #articulo__contacto div {
     width: 90%;
-    padding-top: 5%; }
-    #articulo__contacto div h5 {
-      font-size: 105%; }
+    padding-top: 5%;
+    font-size: 80%; }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #articulo__contacto div h5 {
+        font-size: 100%; } }
+    @media screen and (min-width: 1024px) {
+      #articulo__contacto div h5 {
+        font-size: 105%; } }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      #articulo__contacto div {
+        font-size: 95%; } }
     @media screen and (min-width: 1024px) {
       #articulo__contacto div {
+        font-size: 100%;
         width: auto; } }
+  #articulo__contacto h2 {
+    text-align: center; }
+  @media screen and (max-width: 525px) {
+    #articulo__contacto p {
+      font-size: 80%; } }
 
 label {
   display: block; }

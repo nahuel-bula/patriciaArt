@@ -1,5 +1,6 @@
 $desktopWidth: 1024px;
 $tabletWidth: 768px;
+$mobileMiniWidth: 525px;
 
 @mixin desktopView{
     @media screen and (min-width: ($desktopWidth)){
@@ -10,4 +11,9 @@ $tabletWidth: 768px;
     @media screen and (min-width: $tabletWidth) and (max-width: ($desktopWidth)){
         @content;
     } 
+}
+@mixin mobileMiniView{
+    @media screen and (max-width: ($mobileMiniWidth)){
+        @content;
+    }
 }

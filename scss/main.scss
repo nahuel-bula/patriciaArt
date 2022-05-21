@@ -4,19 +4,28 @@
 
 
 $articleFontSize: 150%;
-$articleH3FontSize: 180%;
-$articleH3Padding: 50px;
+$articleH3FontSize: 50px;
+$articleH3FontSizeMobileMini: 40px;
+$articleH3Padding: 60px;
 $articleH2FontSize:550%;
+$articleH2FontSizeMobile:450%;
+$articleH2FontSizeMobileMini:350%;
 $articleH4FontSizeMobile:90%;
-$obraIndexPaddingTop:25%;
+$obraIndexPaddingTopMobileTablet:45%;
+$obraIndexPaddingTopDesktop:25%;
 $obraIndexPaddingBottom:30%;
 $obraCurlyBracketWidth:35%;
 $articleH4FontSizeDesktop: 150%;
 
 $obras:(
-    desayuno:"../imagenes/Desayuno-sin-bordes.jpeg",
-    festejo: "../imagenes/Festejo-sin-bordes.jpeg",
-    molino: "../imagenes/Molino-sin-bordes.jpeg"
+    desayuno:"../imagenes/Desayuno.jpeg",
+    festejo: "../imagenes/Festejo.jpeg",
+    molino: "../imagenes/Molino.jpeg",
+    ironman: "../imagenes/IronMan.jpeg",
+    paisaje: "../imagenes/Paisaje.jpeg",
+    jessicajones: "../imagenes/JessicaJones.jpeg",
+    festejo-2: "../imagenes/Festejo-2.jpeg",
+
 );
 
 @mixin obraStyle($urlImagen) {
@@ -64,10 +73,24 @@ article {
         background-repeat: no-repeat;
         background-position: center;
         white-space: nowrap;
+        @include mobileMiniView{
+            font-size: $articleH3FontSizeMobileMini;
+        }
     }
     h2{
         font-family: 'Woodland', cursive;
-        font-size:$articleH2FontSize;
+        font-size:$articleH2FontSizeMobile;
+        padding-top: 10%;
+        padding-bottom: 8%;
+        @include mobileMiniView{
+            font-size: $articleH2FontSizeMobileMini;
+        }
+        @include tabletView{
+            font-size: $articleH2FontSize;
+        }
+        @include desktopView{
+            font-size: $articleH2FontSize;
+        }
     }
     h4{
         font-family: 'Woodland', cursive;
@@ -80,25 +103,50 @@ article {
 }
 /* Estilos index (presentacion) */
 .obra__index{
-    padding-top:$obraIndexPaddingTop;
+    padding-top:$obraIndexPaddingTopMobileTablet;
     padding-bottom:$obraIndexPaddingBottom;
     width: 100%;
     margin:auto;
     h3{
         background-image: none;
     }
+    @include desktopView{
+        padding-top: $obraIndexPaddingTopDesktop;
+    }
 }
-.obra__cuadro{
-    padding: 0%;
+.obra__cuadro__div{
     margin: auto;
+    padding: 10%;
     padding-bottom: 7%;
     transition: width 5s, margin 5s, padding 5s;
+    @include desktopView{
+        padding: 20%;
+        padding-bottom: 7%;
+    }
     &:active{
-        width: 100%;
+        margin: auto;
         padding: 0%;
+        width: 100%;
+    }
+}
+.obra__cuadro{
+    transition: width 5s, margin 5s, padding 5s;
+    background: white;
+    padding: 2px;
+    @include tabletView{
+        padding: 4px;
     }
     @include desktopView{
-        padding: 10%;
+        padding: 7px;
+    }
+    &:active{
+        width: 100%;
+        margin: 0%;
+        .obra__cuadro__div{
+            margin: auto;
+            padding: 0%;
+            width: 100%;
+        }
     }
 }
 .obra__curlyBracket{
@@ -107,11 +155,11 @@ article {
     margin: auto;
 }
 .obra__descripcion{
-    padding: 2% 25%;
+    padding: 2% 15%;
     text-align: center;
     p{
         font-size: 80%;
-        padding-top: 3%;
+        padding-top: 5%;
         @include tabletView{
             font-size: 100%;
         }
@@ -136,7 +184,10 @@ article {
 /* Estilos sobreMi.html */
 #articulo__sobreMi{
     padding-bottom: 30%;
-    background-image: url(../imagenes/pinceles.png);
+    background: linear-gradient(0deg,
+            rgba(255,255,255,0.25),
+            rgba(255,255,255,0.5)
+            ),url(../imagenes/pinceles.png);
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: bottom left;
@@ -146,11 +197,15 @@ article {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     h2{
-        padding-top: 10%;
-        padding-bottom: 15%;
         margin:auto;
         display: block;
-        background-image:url("../imagenes/pintura2.png");
+        background: linear-gradient(0deg,
+            rgba(255,255,255,1),
+            rgba(255,255,255,0.75),
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.3),
+            rgba(255,255,255,0.10)
+            ),url("../imagenes/pintura2.png");
         background-size: 35%;
         background-repeat: no-repeat;
         background-position: top right;
@@ -161,45 +216,36 @@ article {
     div{
         div{
             margin: auto;
-            display: flex;
             justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
             img{
-                width: 370px;
-                margin-right: 5px;
-                padding-bottom: 40px;
+                width: 270px;
+                padding:8% 0%;
                 @include tabletView{
                     width: 300px;
-                    padding-bottom: 0%;
                 }
                 @include desktopView{
                     width: 400px;
-                    padding-bottom: 0%;
                 }
-            }
-            aside{
-                width: 420px;
-                font-size: 100%;
-                @include tabletView{
-                    width: 300px;
-                    font-size: 110%;
-                }
-                @include desktopView{
-                    width: 400px;
-                    font-size: 150%; 
+                @include mobileMiniView{
+                    width: 240px;
                 }
             }
             p{
+                margin: auto;
                 width: 420px;
                 font-size: 100%;
+                margin-bottom: 15%;
                 @include tabletView{
                     width: 600px;
                     font-size: 110%;
                 }
                 @include desktopView{
                     width: 850px;
-                    font-size: 150%;
+                    font-size: 120%;
+                }
+                @include mobileMiniView{
+                    width: 300px;
+                    font-size: 80%;
                 }
             }
         }
@@ -207,22 +253,6 @@ article {
 
 }
 /* Estilos arte.html */
-.articulo__arte{
-    padding-top: 100px;
-    padding-bottom: 100px;
-    article{
-        h4{
-            @include tabletView{
-                font-size: 170%;
-            }
-        }
-    }
-    h3{
-        @include tabletView{
-            font-size: 230%;
-        }
-    }
-}
 #arte__body{
     display: grid;
     grid-template-rows:
@@ -231,57 +261,62 @@ article {
     ;
 }
 
-/* Trabajos en proceso */
+/* Pintura y trabajos en proceso */
+#articulo__pintura{
+    grid-area: div_procesos;
+    border-top:groove 4px;
+    article{    
+        padding-top: 70px;
+    }
+}
 .coleccion__arte{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     margin: auto;
+    padding: 5% 0%;
     img{
         width: 60%;
         padding: 6% 3%;
         @include tabletView{
-            width: 25%;
+            width: 40%;
+        }
+        @include desktopView{
+            width: 35%;
         }
     }
     article {
         padding: 3%;
         margin:auto;
-        width: fit-content;
+        width: auto;
         h4{
             text-align: center;
             font-size: 100%;
-            @include tabletView{
-                text-align: center;
-                font-size: 100%;
-            }
         }
         @include tabletView{
-            margin:auto;
             width: 50%;
         }
+        @include desktopView{
+            width: 50%;
+        }
+    }
+    @include desktopView{
+        width: 80%;
     }
 }
 .arte__descripcion{
     font-size: 50%;
-    width: 50%;
+    width: 60%;
     margin: auto;
     @include tabletView{
-        font-size: 80%;
-    }
-}
-#articulo__procesos{
-    grid-area: div_procesos;
-    border-top:groove 4px;
-    article{    
-        padding-top: 50px;
+        font-size: 60%;
     }
     @include desktopView{
-        padding-top: 100px;
-        padding-bottom: 100px;
+        font-size: 70%;
     }
 }
+
 /* Redes sociales */
 
 #articulo__redes{
@@ -291,17 +326,21 @@ article {
 
 /* Estilos galeria.html */
 #articulo__galeria{
-    padding-top: 100px;
     padding-bottom: 100px;
     border-top:groove 4px;
     border-bottom: groove 4px;
     article{
-        width: max-content;
+        width: auto;
         img{
+            width: 80%;
+            padding:0% 3%;
             &:hover{
                 @include desktopView{
                     width: 110%;
                 }    
+            }
+            @include tabletView{
+                width: 100%;
             }
             @include desktopView{
                 width: 100%;
@@ -312,6 +351,9 @@ article {
     }
     p{
         padding: 50px;
+        @include mobileMiniView{
+            font-size: 80%;
+        }
         a{
             text-decoration:underline;
         }
@@ -319,15 +361,20 @@ article {
     div{
         display: flex;
         align-items:flex-start;
-        width: 70%;
         margin: auto;
         flex-wrap: wrap;
+        width: 100%;
+        @include tabletView{
+            width: 70%;
+        }
+        @include desktopView{
+            width: 70%;
+        }
     }
 }
 /* Estilos contacto.html */
 #articulo__contacto{
     text-align: left;
-    padding-top: 5%;
     padding-bottom: 15%;
     width: 100%;
     margin: auto;
@@ -354,13 +401,32 @@ article {
     div{
         width: 90%;
         padding-top: 5%;
+        font-size: 80%;
         h5{
-            font-size: 105%;
+            @include tabletView{
+                font-size: 100%;
+            }
+            @include desktopView{
+                font-size: 105%;
+            } 
+        }
+        @include tabletView{
+            font-size: 95%;
         }
         @include desktopView{
+            font-size: 100%;
             width: auto;
         }
     }
+    h2{
+        text-align: center;
+    }
+    p{
+        @include mobileMiniView{
+            font-size: 80%;
+        }
+    }
+
 
 }
 label{
